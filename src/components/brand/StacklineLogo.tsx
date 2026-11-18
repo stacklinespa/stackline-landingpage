@@ -11,25 +11,25 @@ export function StacklineLogo({
 
   return (
     <svg
-      viewBox="0 0 232 64"
+      viewBox="0 0 226 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
       aria-label="Stackline"
     >
-      {/* Burnt-orange upward-right folded arrow replacing the dot of the 'i' */}
+      {/* Burnt-orange upward-right folded arrow aligned directly over the dotless 'ı' stem */}
       <path
-        d="M139 14.5L168 4L162.8 31.2L154.6 22.8L145.6 28.4L148.6 19.2L139 14.5Z"
-        fill="#D45F32"
+        d="M130.5 11.8L156.5 2L151.8 25.8L144.4 18.8L136.6 23.6L139.1 15.8L130.5 11.8Z"
+        fill="#D95D30"
       />
-      {/* Crisp geometric wordmark using dotless 'ı' so the arrow acts as the tittle */}
+      {/* Crisp geometric wordmark using dotless 'ı' so the folded arrow replaces the dot */}
       <text
         x="2"
-        y="52"
+        y="53"
         fill={wordmarkFill}
         fontFamily="var(--font-jakarta), ui-sans-serif, system-ui, sans-serif"
-        fontSize="46"
+        fontSize="45"
         fontWeight="800"
         letterSpacing="-1.4"
       >

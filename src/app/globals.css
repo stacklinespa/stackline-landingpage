@@ -1,28 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --bg-canvas: #f8f9fb;
+  --bg-canvas: #ffffff;
+  --bg-stone: #f3f5f8;
   --bg-surface: #ffffff;
-  --bg-tray: #eef1f6;
+  --bg-tray: #ebeff5;
   --ink-primary: #162b47;
-  --ink-deep: #0d1b2e;
-  --ink-secondary: #4a5d75;
-  --ink-muted: #6e7f96;
-  --accent-primary: #d45f32;
-  --accent-hover: #be4f24;
+  --ink-deep: #0e1c2f;
+  --ink-secondary: #485b73;
+  --ink-muted: #708299;
+  --accent-primary: #d95d30;
+  --accent-hover: #be4a20;
   --accent-tint: #fdf0ea;
-  --border-hairline: rgba(22, 43, 71, 0.08);
-  --border-strong: rgba(22, 43, 71, 0.16);
+  --border-hairline: rgba(14, 28, 47, 0.1);
+  --border-strong: rgba(14, 28, 47, 0.22);
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 @theme inline {
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 
   --color-canvas: var(--bg-canvas);
+  --color-stone: var(--bg-stone);
   --color-surface: var(--bg-surface);
   --color-tray: var(--bg-tray);
   --color-navy: var(--ink-primary);
@@ -49,15 +51,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.architectural-grid {
-  background-image:
-    linear-gradient(to right, rgba(22, 43, 71, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(22, 43, 71, 0.045) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Subtle fixed film grain — pointer-events-none, zero scroll container repaints */
+.studio-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes studio-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-studio-marquee {
+  animation: studio-marquee 30s linear infinite;
+}
+
+.marquee-wrapper:hover .animate-studio-marquee {
+  animation-play-state: paused;
 }
 
 ::selection {
-  background-color: rgba(212, 95, 50, 0.18);
+  background-color: rgba(217, 93, 48, 0.2);
   color: var(--ink-deep);
 }
 
@@ -69,6 +91,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-studio-marquee {
+    animation: none;
   }
 
   *,

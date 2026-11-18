@@ -2,66 +2,82 @@ export type ProjectPreviewKey = "kurova" | "kalibre3d" | "surko";
 
 export interface ProjectItem {
   id: ProjectPreviewKey;
+  index: string;
   name: string;
+  domain: string;
   url: string;
   category: string;
+  year: string;
+  image: string;
+  imageAlt: string;
   tagline: string;
   description: string;
   capabilities: string[];
-  metricLabel: string;
-  metricValue: string;
+  impactNote: string;
 }
 
 export const PROJECTS: ProjectItem[] = [
   {
     id: "kurova",
+    index: "01",
     name: "Kurova",
+    domain: "kurova.vercel.app",
     url: "https://kurova.vercel.app/",
-    category: "SaaS Empresarial · Centros de estética",
-    tagline: "Gestión operativa, inventario al costo real y utilidad por atención.",
+    category: "SaaS Empresarial",
+    year: "2026",
+    image: "/images/projects/kurova.png",
+    imageAlt: "Captura real de Kurova, plataforma SaaS de gestión para centros de estética",
+    tagline: "Gestión integral, inventario al costo real y utilidad congelada por atención.",
     description:
-      "Plataforma SaaS multiusuario que conecta agenda por profesional, historial de clientas, consumo de insumos por envase con costo promedio ponderado, utilidad congelada por servicio y programa Club con sellos.",
+      "Plataforma multiusuario para centros de estética que une agenda por profesional, historial de clientas, stock por envase con promedio ponderado y programa Club con sellos.",
     capabilities: [
       "Agenda por profesional",
       "Costo promedio ponderado",
       "Utilidad congelada",
-      "Roles y Club de clientas",
+      "Roles + Club de clientas",
     ],
-    metricLabel: "Trazabilidad",
-    metricValue: "Historial inmutable por atención",
+    impactNote: "Trazabilidad inmutable en cada atención y consumo de insumo.",
   },
   {
     id: "kalibre3d",
+    index: "02",
     name: "Kalibre 3D",
+    domain: "kalibre3d.vercel.app",
     url: "https://kalibre3d.vercel.app/",
-    category: "Sistema Operativo · Talleres de impresión 3D",
-    tagline: "Pedidos multicanal, cotizador multicolor y margen real al gramo.",
+    category: "Sistema Operativo",
+    year: "2026",
+    image: "/images/projects/kalibre3d.png",
+    imageAlt: "Captura real de Kalibre 3D, sistema operativo para talleres de impresión 3D",
+    tagline: "Pedidos multicanal, cotizador multicolor y margen neto al gramo.",
     description:
-      "Sistema operativo diseñado para talleres que venden por WhatsApp, Instagram y Mercado Libre. Integra cotizador con purga multicolor, control de bobinas con alertas de stock y cálculo automático de comisiones y ganancia neta.",
+      "Sistema operativo construido para talleres de impresión 3D que venden por WhatsApp, Instagram y Mercado Libre. Controla bobinas, purga multicolor, comisiones y ganancia real del mes.",
     capabilities: [
       "Cotizador con purga multicolor",
       "Cálculo neto Mercado Libre",
-      "Control de bobinas al gramo",
-      "Gestión de pedidos multicanal",
+      "Control de bobinas",
+      "Pedidos multicanal",
     ],
-    metricLabel: "Velocidad operativa",
-    metricValue: "< 30 s para registrar una venta",
+    impactNote: "Registra ventas desde el celular en menos de 30 segundos.",
   },
   {
     id: "surko",
+    index: "03",
     name: "Surko",
+    domain: "surko.vercel.app",
     url: "https://surko.vercel.app/",
-    category: "Aplicación Web · Impresión 3D personalizada",
-    tagline: "Experiencia comercial de marca y catálogos personalizables.",
+    category: "Aplicación Web & Catálogo",
+    year: "2026",
+    image: "/images/projects/surko.png",
+    imageAlt: "Captura real de Surko, plataforma web y catálogo de impresión 3D personalizada",
+    tagline: "Identidad digital y catálogos personalizables para impresión 3D en Chile.",
     description:
-      "Plataforma web a medida para diseño e impresión 3D personalizada con envíos a todo Chile. Organiza líneas de producto, selección de colores y un flujo directo de cotización orientado a conversión desde móvil.",
+      "Experiencia web a medida diseñada para presentar líneas de emblemas, llaveros y kits de encuadernación, con elección de colores y cotización directa optimizada para móvil.",
     capabilities: [
-      "Catálogos segmentados",
-      "Personalización por color",
-      "Flujo directo de cotización",
-      "Diseño web orientado a conversión",
+      "Catálogos por línea",
+      "Personalización de colores",
+      "Cotización directa",
+      "Envíos a todo Chile",
     ],
-    metricLabel: "Cobertura",
-    metricValue: "Pedidos y envíos a todo Chile",
+    impactNote: "Diseñada para convertir visitas móviles en pedidos concretos.",
   },
 ];

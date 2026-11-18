@@ -1,15 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Bricolage_Grotesque,
-  JetBrains_Mono,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
+import { JetBrains_Mono, Plus_Jakarta_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
+const syne = Syne({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
-  variable: "--font-bricolage",
+  variable: "--font-syne",
   display: "swap",
 });
 
@@ -32,14 +28,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stackline.vercel.ap
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Stackline — Software empresarial y aplicaciones web a la medida",
+    default: "Stackline — Estudio de software a la medida",
     template: "%s | Stackline",
   },
   description:
-    "Somos una empresa joven de ingeniería en Chile dedicada a crear sistemas empresariales internos y aplicaciones web personalizadas para cada requerimiento.",
+    "Somos Stackline, una empresa joven de software en Chile dedicada a crear sistemas empresariales internos y aplicaciones web a la medida para cada requerimiento.",
   keywords: [
     "software a medida",
-    "desarrollo de software Chile",
+    "estudio de software Chile",
     "sistemas empresariales a medida",
     "ERP a medida",
     "aplicaciones web personalizadas",
@@ -52,20 +48,20 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: siteUrl,
     siteName: "Stackline",
-    title: "Stackline — Software que calza con tu operación, no al revés",
+    title: "Stackline — Construimos software hecho a tu medida",
     description:
-      "Empresa joven de desarrollo de software a medida: sistemas empresariales internos, plataformas web y SaaS construidos para cada requerimiento.",
+      "Empresa joven de desarrollo de software a medida en Chile: sistemas empresariales internos y plataformas web creadas desde cero para cada requerimiento.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stackline — Software empresarial y web a la medida",
+    title: "Stackline — Estudio de software a la medida",
     description:
-      "Sistemas internos y aplicaciones web personalizadas diseñadas para tu operación real.",
+      "Sistemas empresariales internos y aplicaciones web diseñadas desde cero para tu operación.",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F8F9FB",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };
@@ -78,9 +74,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${bricolage.variable} ${jakarta.variable} ${jetbrains.variable}`}
+      className={`${syne.variable} ${jakarta.variable} ${jetbrains.variable}`}
     >
       <body className="min-h-[100dvh] bg-canvas font-sans text-navy antialiased">
+        <div aria-hidden="true" className="studio-grain" />
         {children}
       </body>
     </html>

@@ -7,7 +7,7 @@ interface PillButtonProps {
   children: ReactNode;
   href?: string;
   external?: boolean;
-  variant?: "accent" | "navy" | "ghost";
+  variant?: "accent" | "navy" | "light" | "ghost" | "ghost-dark";
   size?: "sm" | "md";
   showArrow?: boolean;
   onClick?: () => void;
@@ -30,16 +30,21 @@ export function PillButton({
 }: PillButtonProps) {
   const variantStyles = {
     accent:
-      "bg-accent text-white hover:bg-accent-hover shadow-[0_8px_24px_-10px_rgba(212,95,50,0.65)]",
-    navy: "bg-navy text-white hover:bg-navy-deep shadow-[0_8px_24px_-12px_rgba(22,43,71,0.45)]",
+      "bg-accent text-white hover:bg-accent-hover shadow-[0_10px_28px_-12px_rgba(217,93,48,0.65)]",
+    navy: "bg-navy-deep text-white hover:bg-navy shadow-[0_10px_28px_-14px_rgba(14,28,47,0.5)]",
+    light: "bg-white text-navy-deep hover:bg-stone",
     ghost:
-      "bg-surface text-navy ring-1 ring-[#162B47]/[0.12] hover:ring-[#162B47]/[0.24] hover:bg-tray/50",
+      "bg-transparent text-navy-deep ring-1 ring-navy-deep/15 hover:ring-navy-deep/35 hover:bg-stone",
+    "ghost-dark":
+      "bg-white/[0.06] text-white ring-1 ring-white/15 hover:bg-white/[0.12] hover:ring-white/30",
   }[variant];
 
   const iconWrapStyles = {
-    accent: "bg-white/18 text-white",
+    accent: "bg-white/20 text-white",
     navy: "bg-white/14 text-white",
-    ghost: "bg-navy/[0.06] text-navy",
+    light: "bg-navy-deep/8 text-navy-deep",
+    ghost: "bg-navy-deep/8 text-navy-deep",
+    "ghost-dark": "bg-white/14 text-white",
   }[variant];
 
   const sizeStyles =
@@ -53,7 +58,7 @@ export function PillButton({
 
   const iconSize = size === "sm" ? "h-7 w-7" : "h-8 w-8";
 
-  const sharedClasses = `group inline-flex items-center justify-center rounded-full font-medium tracking-[-0.01em] transition-[transform,background-color,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60 ${variantStyles} ${sizeStyles} ${className}`;
+  const sharedClasses = `group inline-flex shrink-0 whitespace-nowrap items-center justify-center rounded-full font-medium tracking-[-0.01em] transition-[transform,background-color,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60 ${variantStyles} ${sizeStyles} ${className}`;
 
   const content = (
     <>

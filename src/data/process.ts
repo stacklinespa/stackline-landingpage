@@ -1,8 +1,8 @@
-export interface PillarItem {
+export interface ManifestoPoint {
   id: string;
+  label: string;
   title: string;
   description: string;
-  badge: string;
 }
 
 export interface ProcessStep {
@@ -12,57 +12,57 @@ export interface ProcessStep {
   deliverable: string;
 }
 
-export const YOUNG_PILLARS: PillarItem[] = [
+export const MANIFESTO_POINTS: ManifestoPoint[] = [
   {
     id: "trato-directo",
-    badge: "Sin intermediarios",
-    title: "Hablas directo con quienes programan tu sistema",
+    label: "Sin capas intermedias",
+    title: "Conversas directo con quienes diseñan y escriben el código.",
     description:
-      "Nada de teléfonos rotos entre vendedores y técnicos. Desde la primera reunión conversas con el equipo de ingeniería que diseña y construye tu solución.",
+      "No delegamos tu proyecto a desconocidos después de la primera reunión. El mismo equipo que te escucha es el que construye cada pantalla y cada regla de negocio.",
   },
   {
-    id: "ritmo-real",
-    badge: "Agilidad real",
-    title: "Entregas visibles cada semana, no promesas a seis meses",
+    id: "hambre-de-calidad",
+    label: "Empresa joven, foco total",
+    title: "Estamos creciendo — por eso cada proyecto importa de verdad.",
     description:
-      "Al ser una empresa joven y enfocada, avanzamos sin burocracia. Ves pantallas reales funcionando temprano para ajustar detalles antes de lanzar.",
+      "No eres un ticket más en una consultora gigante. Estamos construyendo nuestra reputación proyecto a proyecto, con obsesión por los detalles, cercanía y entregas reales.",
   },
   {
-    id: "stack-moderno",
-    badge: "Calidad técnica",
-    title: "Tecnología moderna, rápida y fácil de mantener",
+    id: "velocidad-honesta",
+    label: "Demos semanales",
+    title: "Ves tu software funcionando temprano, no al final de seis meses.",
     description:
-      "Construimos sobre arquitectura web actual, segura y responsiva, pensada para responder bien desde el primer usuario hasta cuando tu operación escale.",
+      "Trabajamos en ciclos cortos con enlaces navegables en vivo cada semana para que pruebes, ajustes y tengas claridad total en todo momento.",
   },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Levantamiento del requerimiento",
+    title: "Escuchamos tu operación",
     description:
-      "Escuchamos cómo opera tu negocio hoy, identificamos cuellos de botella y definimos con claridad qué problema debe resolver el software.",
-    deliverable: "Alcance y prioridades claras",
+      "Entendemos cómo trabajas hoy, dónde se pierde tiempo o dinero y qué necesita resolver el software primero.",
+    deliverable: "Diagnóstico + alcance claro",
   },
   {
     number: "02",
-    title: "Arquitectura y prototipo",
+    title: "Diseñamos el prototipo",
     description:
-      "Diseñamos el flujo de pantallas, la estructura de datos y las reglas de cálculo clave para que valides la solución antes de programar a fondo.",
-    deliverable: "Mapa funcional + propuesta cerrada",
+      "Definimos flujos, pantallas clave y reglas de negocio antes de escribir código a fondo.",
+    deliverable: "Propuesta visual y funcional",
   },
   {
     number: "03",
-    title: "Desarrollo iterativo con demos",
+    title: "Construimos contigo",
     description:
-      "Construimos en ciclos cortos con avances navegables en entorno real, afinando cada detalle con retroalimentación directa de tu equipo.",
-    deliverable: "Demos semanales en vivo",
+      "Entregamos avances funcionales cada semana en un entorno real para probar y ajustar rápido.",
+    deliverable: "Demos navegables semanales",
   },
   {
     number: "04",
-    title: "Despliegue y acompañamiento",
+    title: "Lanzamos y acompañamos",
     description:
-      "Publicamos en producción, verificamos rendimiento en escritorio y móvil, capacitamos a tus usuarios y acompañamos la evolución del sistema.",
-    deliverable: "Sistema en producción + soporte",
+      "Publicamos en producción, capacitamos a tu equipo y seguimos disponibles para evolucionar la plataforma.",
+    deliverable: "En producción + soporte",
   },
 ];
