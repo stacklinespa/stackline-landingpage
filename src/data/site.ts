@@ -7,6 +7,7 @@ export const SITE_CONFIG = {
   availabilityLabel: "Agenda abierta · Recibiendo nuevos proyectos",
   navItems: [
     { label: "Proyectos", href: "#proyectos" },
+    { label: "Productos", href: "#productos" },
     { label: "Qué hacemos", href: "#soluciones" },
     { label: "Estudio", href: "#nosotros" },
     { label: "Proceso", href: "#proceso" },

@@ -4,6 +4,7 @@ import { Footer } from "@/components/sections/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { KineticMarquee } from "@/components/sections/KineticMarquee";
 import { Navbar } from "@/components/sections/Navbar";
+import { ProductsSection } from "@/components/sections/ProductsSection";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { StudioManifesto } from "@/components/sections/StudioManifesto";
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <main id="contenido-principal">
         <HeroSection />
         <ProjectsShowcase />
+        <ProductsSection />
         <CapabilitiesAccordion />
         <KineticMarquee />
         <StudioManifesto />
